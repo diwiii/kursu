@@ -22,7 +22,9 @@ Route::get('/hello', function () {
 |
 */
 
+//Šis ir index
 Route::get('/', 'DishesController@index');
+// izmantojam GET dishes, lai neizmantotos POST dishes
 Route::get('dishes', 'DishesController@index');
 Route::post('dishes', 'DishesController@store');
 

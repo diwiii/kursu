@@ -1,31 +1,39 @@
 @extends('layouts.app')
 
+@section('head')
+    <title>Pievienot jaunu ēdienu</title>
+@endsection
+
 @section('content')
-{{-- form to update category instance --}}
-<form action="/p" enctype="multipart/form-data" method="POST">
+{{-- form to create new dish instance --}}
+<h1>Pievienot jaunu ēdienu</h1>
+<form action="/dishes" enctype="multipart/form-data" method="POST">
+    {{-- cross site request forgery --}}
     @csrf
-    @foreach( $dishCategories as $category )
-        {{-- list of category names --}}
-    <h1>{{ $category->name }}</h1>
-        
-    <input  id="{{$category->id}}"
-            type="text"
-            class="form-control @error('categoryName') is-invalid @enderror"
-            name="categoryName" value="{{ old('categoryName') }}"
-            required autocomplete="on">
+    {{-- iespēja izvēlēties ēdienu kategorijas --}}
+    <ul>
+        @foreach ($dishCategories as $category)
+        <li>{{$category->name}}, id: {{$category->id}}</li>
+        @endforeach
+    </ul>
+    <div>
+        <label for="dishCategory">Ēdiena iedalījums?</label>
+        <input type="text" name="dishCategory" id="dishCategory" required>
+    </div>
+    <div>
+        <label for="dishName">Ēdiena nosaukums</label>
+        <input type="text" name="dishName" id="dishName" required>
+    </div>
+    <div>
+        <label for="dishPrice">Ēdiena cena</label>
+        <input type="text" name="dishPrice" id="dishPrice">
+    </div>
 
-    @error('categoryName')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
-    <button class="btn btn-primary">Update {{$category->name}}</button>
-
-        {{-- remove category --}}
-
-        {{-- if last add new category --}}
-        
-    @endforeach
+    <button type="submit">Pievienot</button>
 </form>
 @endsection
+
+{{-- side comments for category forms --}}
+{{-- remove category --}}
+{{-- if last add new category --}}
     

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('head')
+    <title>Ēdienkarte</title>
+@endsection
+
 @section('content')
     @foreach( $dishCategories as $category )
         <h1>{{ $category->name }}</h1>
