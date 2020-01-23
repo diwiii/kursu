@@ -45,14 +45,25 @@ class DishesController extends Controller
     }
 
 
-    // Show a view to edit resource
-    public function edit(){
-
+    // Show a view to edit existing resource
+    public function edit($id){
+        $dish = Dish::findOrFail($id);
+        return view('dishes.edit', compact('dish'));
     }
+
     // Persist the edited resource
     // Atjauno izmainīto resursu
-    public function update(){
+    public function update($id){
+        $dish = Dish::findOrFail($id);
 
+        $dish->category_id = request('dishCategory');
+        $dish->name = request('dishName');
+        $dish->price = request('dishPrice');
+
+        $dish->save();
+
+        //Returns to edited resource
+        return redirect('/dishes/'. $dish->id);
     }
     // Delete the dishes
     public function destroy(){

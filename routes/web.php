@@ -31,7 +31,9 @@ Route::post('dishes', 'DishesController@store');
 Route::get('dishes/create', 'DishesController@create');
 
 Route::get('dishes/{dish}', 'DishesController@show');
+// Rediģēšanas forma ēdiena ierakstam
 Route::get('dishes/{dish}/edit', 'DishesController@edit');
+// Saglabājam ēdiena ierakstu
 Route::put('dishes/{dish}', 'DishesController@update');
 
 
