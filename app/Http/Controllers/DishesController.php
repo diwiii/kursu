@@ -31,8 +31,8 @@ class DishesController extends Controller
 
     // Persist the resource
     public function store(){
-        //die('hello');
        // dump(request()->all());
+       
         $dish = new Dish;
         $dish->category_id = request('dishCategory');
         $dish->name = request('dishName');
