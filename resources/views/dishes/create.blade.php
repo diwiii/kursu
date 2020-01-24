@@ -16,22 +16,71 @@
         <li>{{$category->name}}, id: {{$category->id}}</li>
         @endforeach
     </ul>
+    {{-- this is form input field with label --}}
     <div>
         <label for="dishCategory">Ēdiena iedalījums?</label>
-        <input type="text" name="dishCategory" id="dishCategory" required>
+        <input 
+        id="dishCategory"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('dishCategory')
+        class="danger"
+        @enderror
+        type="text"
+        name="dishCategory"
+        {{-- provide old input incase of error --}}
+        value="{{old('dishCategory')}}"
+        required>
+
+        {{-- if error message --}}
+        @error('dishCategory')
+        <p>{{$errors->first('dishCategory')}}</p>
+        @enderror
     </div>
+    {{-- this is form input field with label --}}
     <div>
         <label for="dishName">Ēdiena nosaukums</label>
-        <input type="text" name="dishName" id="dishName" required>
+        <input 
+        id="dishName"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('dishName')
+        class="danger"
+        @enderror
+        type="text"
+        name="dishName"
+        {{-- provide old input incase of error --}}
+        value="{{old('dishName')}}"
+        required>
+
+        {{-- if error message --}}
+        @error('dishName')
+        <p>{{$errors->first('dishName')}}</p>
+        @enderror
     </div>
+    {{-- this is form input field with label --}}
     <div>
         <label for="dishPrice">Ēdiena cena</label>
-        <input type="text" name="dishPrice" id="dishPrice">
+        <input 
+        id="dishPrice"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('dishPrice')
+        class="danger"
+        @enderror
+        type="text"
+        name="dishPrice"
+        {{-- provide old input incase of error --}}
+        value="{{old('dishPrice')}}">
+
+        {{-- if error message --}}
+        @error('dishPrice')
+        <p>{{$errors->first('dishPrice')}}</p>
+        @enderror
     </div>
 
     <button type="submit">Pievienot</button>
 </form>
 @endsection
+
+{{-- Pārtulkot latviski error fieldus php un html --}}
 
 {{-- side comments for category forms --}}
 {{-- remove category --}}

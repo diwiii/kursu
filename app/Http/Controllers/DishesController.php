@@ -31,8 +31,15 @@ class DishesController extends Controller
 
     // Persist the resource
     public function store(){
-       // dump(request()->all());
+        // dump(request()->all());
        
+        // Request Validation
+        request()->validate([
+        'dishCategory' => 'required',
+        'dishName' => 'required',
+        'dishPrice' => 'nullable'
+        ]);
+
         $dish = new Dish;
         $dish->category_id = request('dishCategory');
         $dish->name = request('dishName');
