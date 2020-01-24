@@ -31,18 +31,46 @@ class DishesController extends Controller
 
     // Persist the resource
     public function store(){
+        // dump(request()->all());
+       
+        // Request Validation
+        request()->validate([
+        'dishCategory' => 'required',
+        'dishName' => 'required',
+        'dishPrice' => 'nullable'
+        ]);
 
+        $dish = new Dish;
+        $dish->category_id = request('dishCategory');
+        $dish->name = request('dishName');
+        $dish->price = request('dishPrice');
+
+        $dish->save();
+
+        //Šis nosūtīs uz sākumu
+        return redirect('/');
     }
 
 
-    // Show a view to edit resource
-    public function edit(){
-
+    // Show a view to edit existing resource
+    public function edit($id){
+        $dish = Dish::findOrFail($id);
+        return view('dishes.edit', compact('dish'));
     }
+
     // Persist the edited resource
     // Atjauno izmainīto resursu
-    public function update(){
+    public function update($id){
+        $dish = Dish::findOrFail($id);
 
+        $dish->category_id = request('dishCategory');
+        $dish->name = request('dishName');
+        $dish->price = request('dishPrice');
+
+        $dish->save();
+
+        //Returns to edited resource
+        return redirect('/dishes/'. $dish->id);
     }
     // Delete the dishes
     public function destroy(){
