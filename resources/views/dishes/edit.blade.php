@@ -13,18 +13,72 @@
     {{-- cross site request forgery --}}
     @csrf
     {{-- todo: iespēja izvēlēties ēdienu kategorijas --}}
+    <ul>
+        @foreach ($dishCategories as $category)
+        <li>{{$category->name}}, id: {{$category->id}}</li>
+        @endforeach
+    </ul>
+    {{-- this is form input field with label --}}
     <div>
         <label for="dishCategory">Ēdiena iedalījums?</label>
-        <input type="text" name="dishCategory" id="dishCategory" value="{{$dish->category_id}}" required>
+        <input 
+        id="dishCategory"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('dishCategory')
+        class="danger"
+        @enderror
+        type="text"
+        name="dishCategory"
+        {{-- provide old input incase of error --}}
+        value="{{ old('dishCategory') ?? $dish->category_id }}"
+        required
+        autofocus>
+
+        {{-- if error message --}}
+        @error('dishCategory')
+        <p>{{$errors->first('dishCategory')}}</p>
+        @enderror
     </div>
+    {{-- this is form input field with label --}}
     <div>
         <label for="dishName">Ēdiena nosaukums</label>
-        <input type="text" name="dishName" id="dishName" value="{{$dish->name}}" required>
+        <input 
+        id="dishName"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('dishName')
+        class="danger"
+        @enderror
+        type="text"
+        name="dishName"
+        {{-- provide old input incase of error --}}
+        value="{{old('dishName') ?? $dish->name}}"
+        required>
+
+        {{-- if error message --}}
+        @error('dishName')
+        <p>{{$errors->first('dishName')}}</p>
+        @enderror
     </div>
+    {{-- this is form input field with label --}}
     <div>
         <label for="dishPrice">Ēdiena cena</label>
-        <input type="text" name="dishPrice" id="dishPrice" value="{{$dish->price}}">
+        <input 
+        id="dishPrice"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('dishPrice')
+        class="danger"
+        @enderror
+        type="text"
+        name="dishPrice"
+        {{-- provide old input incase of error --}}
+        value="{{ old('dishPrice') ?? $dish->price }}">
+
+        {{-- if error message --}}
+        @error('dishPrice')
+        <p>{{$errors->first('dishPrice')}}</p>
+        @enderror
     </div>
+
 
     <button type="submit">Saglabāt izmaiņas</button>
 </form>

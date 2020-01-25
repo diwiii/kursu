@@ -7,7 +7,7 @@
 @section('content')
 {{-- form to create new dish instance --}}
 <h1>Pievienot jaunu ēdienu</h1>
-<form action="/dishes" enctype="multipart/form-data" method="POST">
+<form method="POST" action="/dishes">
     {{-- cross site request forgery --}}
     @csrf
     {{-- iespēja izvēlēties ēdienu kategorijas --}}
@@ -29,7 +29,8 @@
         name="dishCategory"
         {{-- provide old input incase of error --}}
         value="{{old('dishCategory')}}"
-        required>
+        required
+        autofocus>
 
         {{-- if error message --}}
         @error('dishCategory')

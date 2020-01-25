@@ -37,7 +37,7 @@ class DishesController extends Controller
         request()->validate([
         'dishCategory' => 'required',
         'dishName' => 'required',
-        'dishPrice' => 'nullable'
+        'dishPrice' => 'numeric | nullable'
         ]);
 
         $dish = new Dish;
@@ -54,13 +54,22 @@ class DishesController extends Controller
 
     // Show a view to edit existing resource
     public function edit($id){
+        $dishCategories = DishCategory::all();
         $dish = Dish::findOrFail($id);
-        return view('dishes.edit', compact('dish'));
+        return view('dishes.edit', compact('dishCategories', 'dish'));
     }
 
     // Persist the edited resource
     // Atjauno izmainīto resursu
     public function update($id){
+        
+        // Request Validation
+        request()->validate([
+        'dishCategory' => 'required',
+        'dishName' => 'required',
+        'dishPrice' => 'numeric | nullable'
+        ]);
+        
         $dish = Dish::findOrFail($id);
 
         $dish->category_id = request('dishCategory');
