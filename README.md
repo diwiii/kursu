@@ -1,5 +1,6 @@
 # A restaurant menu
 
+### add method validateDish()
 ### Nomainīju parametru vardus iekš blade formām.
 
 ## todo:

@@ -30,11 +30,7 @@ class DishesController extends Controller
     public function store(){
         
         // Dish please create model from validated request data.
-        Dish::create(request()->validate([
-            'category_id' => 'required',
-            'name' => 'required',
-            'price' => 'numeric | nullable'
-        ]));
+        Dish::create($this->validateDish());
 
         //Šis nosūtīs uz sākumu
         return redirect('/');
@@ -53,11 +49,7 @@ class DishesController extends Controller
     public function update(Dish $dish){
         
         // Dish please update model from validated request data.
-        $dish->update(request()->validate([
-            'category_id' => 'required',
-            'name' => 'required',
-            'price' => 'numeric | nullable'
-        ]));
+        $dish->update($this->validateDish());
 
         //Returns to edited resource
         return redirect('/dishes/'. $dish->id);
@@ -65,6 +57,15 @@ class DishesController extends Controller
     // Delete the dishes
     public function destroy(){
 
+    }
+
+    protected function validateDish() 
+    {
+        return request()->validate([
+            'category_id' => 'required',
+            'name' => 'required',
+            'price' => 'numeric | nullable'
+        ]);
     }
 
 }
