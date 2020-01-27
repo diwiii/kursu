@@ -20,62 +20,62 @@
     </ul>
     {{-- this is form input field with label --}}
     <div>
-        <label for="dishCategory">Ēdiena iedalījums?</label>
+        <label for="category_id">Ēdiena iedalījums?</label>
         <input 
-        id="dishCategory"
+        id="category_id"
         {{-- @error directive is fired and adds danger class whenever we get error --}}
-        @error('dishCategory')
+        @error('category_id')
         class="danger"
         @enderror
         type="text"
-        name="dishCategory"
+        name="category_id"
         {{-- provide old input incase of error --}}
-        value="{{ old('dishCategory') ?? $dish->category_id }}"
+        value="{{ old('category_id') ?? $dish->category_id }}"
         required
         autofocus>
 
         {{-- if error message --}}
-        @error('dishCategory')
-        <p>{{$errors->first('dishCategory')}}</p>
+        @error('category_id')
+        <p>{{$errors->first('category_id')}}</p>
         @enderror
     </div>
     {{-- this is form input field with label --}}
     <div>
-        <label for="dishName">Ēdiena nosaukums</label>
+        <label for="name">Ēdiena nosaukums</label>
         <input 
-        id="dishName"
+        id="name"
         {{-- @error directive is fired and adds danger class whenever we get error --}}
-        @error('dishName')
+        @error('name')
         class="danger"
         @enderror
         type="text"
-        name="dishName"
+        name="name"
         {{-- provide old input incase of error --}}
-        value="{{old('dishName') ?? $dish->name}}"
+        value="{{old('name') ?? $dish->name}}"
         required>
 
         {{-- if error message --}}
-        @error('dishName')
-        <p>{{$errors->first('dishName')}}</p>
+        @error('name')
+        <p>{{$errors->first('name')}}</p>
         @enderror
     </div>
     {{-- this is form input field with label --}}
     <div>
-        <label for="dishPrice">Ēdiena cena</label>
+        <label for="price">Ēdiena cena</label>
         <input 
-        id="dishPrice"
+        id="price"
         {{-- @error directive is fired and adds danger class whenever we get error --}}
-        @error('dishPrice')
+        @error('price')
         class="danger"
         @enderror
         type="text"
-        name="dishPrice"
+        name="price"
         {{-- provide old input incase of error --}}
-        value="{{ old('dishPrice') ?? $dish->price }}">
+        value="{{ old('price') ?? $dish->price }}">
 
         {{-- if error message --}}
-        @error('dishPrice')
-        <p>{{$errors->first('dishPrice')}}</p>
+        @error('price')
+        <p>{{$errors->first('price')}}</p>
         @enderror
     </div>
 
