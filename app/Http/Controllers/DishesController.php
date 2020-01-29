@@ -33,7 +33,7 @@ class DishesController extends Controller
         Dish::create($this->validateDish());
 
         //Šis nosūtīs uz sākumu
-        return redirect('/');
+        return redirect(route('dishes.index'));
     }
 
 
@@ -52,7 +52,7 @@ class DishesController extends Controller
         $dish->update($this->validateDish());
 
         //Returns to edited resource
-        return redirect('/dishes/'. $dish->id);
+        return redirect($dish->path());
     }
     // Delete the dishes
     public function destroy(){

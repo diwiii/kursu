@@ -1,1 +1,1 @@
-<a href="/dishes">/home</a>
+<a href="{{ route('dishes.index') }}">/home</a>

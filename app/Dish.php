@@ -21,6 +21,12 @@ class Dish extends Model
         return $this->belongsTo(DishCategory::class);
     }
 
+    /**
+     * Func that returns path of the model
+     */
+    public function path() {
+        return route('dishes.show', $this);
+    }
 
     /**
      * Šo funkciju izmantot kad pievieno slugu un slugu vajadzētu
