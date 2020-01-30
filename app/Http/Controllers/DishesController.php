@@ -15,66 +15,57 @@ class DishesController extends Controller
     }
 
     // Single resource  
-    public function show($id) {
-        $dish = Dish::findOrFail($id);
-
-        // Vēl nav izveidots routs
-        return view('dishes.show', ['dish' => $dish]);
+        // Show method Route Model Binding
+    public function show(Dish $dish) {
+        return view('dishes.show', compact('dish'));
     }
 
     // Show the form for creating a new resource.
     public function create(){
         $dishCategories = DishCategory::all();
-        
         return view('dishes.create', compact('dishCategories'));
     }
 
     // Persist the resource
     public function store(){
-        // dump(request()->all());
-       
-        // Request Validation
-        request()->validate([
-        'dishCategory' => 'required',
-        'dishName' => 'required',
-        'dishPrice' => 'nullable'
-        ]);
-
-        $dish = new Dish;
-        $dish->category_id = request('dishCategory');
-        $dish->name = request('dishName');
-        $dish->price = request('dishPrice');
-
-        $dish->save();
+        
+        // Dish please create model from validated request data.
+        Dish::create($this->validateDish());
 
         //Šis nosūtīs uz sākumu
-        return redirect('/');
+        return redirect(route('dishes.index'));
     }
 
 
     // Show a view to edit existing resource
-    public function edit($id){
-        $dish = Dish::findOrFail($id);
-        return view('dishes.edit', compact('dish'));
+        // Edit method Route Model Binding
+    public function edit(Dish $dish){
+        $dishCategories = DishCategory::all();
+        return view('dishes.edit', compact('dishCategories', 'dish'));
     }
 
     // Persist the edited resource
     // Atjauno izmainīto resursu
-    public function update($id){
-        $dish = Dish::findOrFail($id);
-
-        $dish->category_id = request('dishCategory');
-        $dish->name = request('dishName');
-        $dish->price = request('dishPrice');
-
-        $dish->save();
+    public function update(Dish $dish){
+        
+        // Dish please update model from validated request data.
+        $dish->update($this->validateDish());
 
         //Returns to edited resource
-        return redirect('/dishes/'. $dish->id);
+        return redirect($dish->path());
     }
     // Delete the dishes
     public function destroy(){
 
+    }
+
+    protected function validateDish() 
+    {
+        return request()->validate([
+            'category_id' => 'required',
+            'name' => 'required',
+            'price' => 'numeric | nullable'
+        ]);
     }
 
 }

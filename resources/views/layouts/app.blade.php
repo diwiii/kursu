@@ -7,6 +7,7 @@
     @yield('head')
 </head>
 <body>
+    @include('inc.nav')
     @yield('content')
 </body>
 </html>

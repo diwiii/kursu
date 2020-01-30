@@ -9,7 +9,11 @@
         <h1>{{ $category->name }}</h1>
         <ul>
             @foreach( $category->dishes as $dish )
-            <li>id: {{ $dish->id }}| {{ $dish->name }} | {{ $dish->price }}</li>
+            <li>
+                <a href="{{$dish->path()}}">
+                    id: {{ $dish->id }}| {{ $dish->name }} | {{ $dish->price }}
+                </a>
+            </li>
             @endforeach
         </ul>
     @endforeach

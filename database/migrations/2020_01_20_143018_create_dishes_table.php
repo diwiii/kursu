@@ -15,12 +15,14 @@ class CreateDishesTable extends Migration
     {
         Schema::create('dishes', function (Blueprint $table) {
             $table->bigIncrements('id');
+        //I need to add this    $table->string('slug');
             $table->string('name');
+            $table->decimal('price', 8, 2)->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->float('price')->nullable();
             $table->timestamps();
 
+            //Foreign Key
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('dish_categories');
         });
