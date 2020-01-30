@@ -17,7 +17,7 @@ class CreateDishesTable extends Migration
             $table->bigIncrements('id');
         //I need to add this    $table->string('slug');
             $table->string('name');
-            $table->float('price')->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
