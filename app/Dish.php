@@ -24,7 +24,10 @@ class Dish extends Model
     /**
      * Func that returns path of the model
      */
-    public function path() {
+    public function path($do = null) {
+        if ($do == 'edit') {
+            return route('dishes.edit', $this);
+        }
         return route('dishes.show', $this);
     }
 
