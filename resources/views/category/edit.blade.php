@@ -31,7 +31,8 @@
         name="name"
         {{-- provide old input incase of error --}}
         value="{{old('name') ?? $category->name}}"
-        required>
+        required
+        autofocus>
 
         {{-- if error message --}}
         @error('name')

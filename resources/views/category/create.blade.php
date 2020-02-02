@@ -28,7 +28,8 @@
         name="name"
         {{-- provide old input incase of error --}}
         value="{{old('name')}}"
-        required>
+        required
+        autofocus>
 
         {{-- if error message --}}
         @error('name')
