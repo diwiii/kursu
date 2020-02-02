@@ -1,0 +1,234 @@
+// Backgrounds
+.bg {
+    &-orange {
+        //use #{} interpolation to not compile quotes 
+        background: #{map-get($gradient-colors, 'orange' )};
+        color: #fff;
+    }
+    &-orange2 {
+        //use #{} interpolation to not compile quotes 
+        background: #{map-get($gradient-colors, 'orange2' )};
+        color: #fff;
+    }
+    &-tirkizs {
+        background: $tirkizs;
+        color: #fff;
+    }
+    &-green {
+        background: $green;
+        color: #152b04;
+        a:link, a:visited {
+            color: #152b04;
+        }
+    }
+    &-dark {
+        background: $dark;
+        color: #fff;
+    }
+    
+}
+// Color classes
+.color {
+    &-orange {
+        color: $orange;
+    }
+    &-orange2 {
+        color: $orange2;
+    }
+}
+
+// Border
+.border {
+    border: 1px solid;
+
+    &-top {
+        border-top: 2rem solid; 
+    }
+    &-btm {
+        border-bottom: 0.5rem solid; 
+    }
+    &-green {
+        border-color: $green;
+    }
+    &-orange {
+        border-color: $orange;
+    }    
+}
+
+
+
+// Class that will stick element to screen and sets it to 100vw
+// I think this class should contain only one style: position:fixed;
+// I should addapt this in html
+.fixed {
+    top: 0;
+    position: fixed;
+    width: 100vw;
+}
+.fixedd {
+    position: fixed;
+}
+
+
+// .landing ~ div .navbar {
+//     display: none;
+// }
+
+
+// Set on top of image
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.5);
+}
+// Containers
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+//Margin & Padding
+.my-1 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.px-05 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.p-05 {
+    padding: 0.5rem;
+}
+.p-1 {
+    padding: 0.5rem;
+}
+
+// Height
+.height {
+    &-75 {
+        height: 75%;
+    }
+    &-50 {
+        height: 50%;
+    }
+    &-25 {
+        height: 25%;
+    }
+    &-shrinked {
+        height: 2.5rem;
+    }
+}
+
+// Buttons 
+.btn {
+    display: block;
+    height: 100%;
+    //color: #333;
+    padding: 0.8rem 0.8rem;
+    border: none;
+    cursor: pointer;
+  //  margin-right: 0.5rem; //if we have buttons in a row give them a space of 0.5rem
+    outline: none;
+    @include transition-ease;
+}
+
+// Shadow
+.box-shadow { 
+    position: relative;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.45);
+}
+
+// Set flex
+.vertical {
+    display: flex;
+}
+
+
+
+
+/**
+Izdomā kā ievietot 0.5 rem
+*/
+// $spaceamounts: (1,2); //list of numbers an array
+
+// //LOOP through list of numbers
+// @each $space in $spaceamounts {
+//     //All around margin
+//     .m-#{$space} { //put a number from list -> #{$var}
+//         margin: #{$space}rem;
+//     }
+
+//     //Vertical Margin
+//     .my-#{$space} {
+//         margin: #{$space}rem 0;
+//     }
+
+//     //All around padding
+//     .p-#{$space} {
+//         padding: #{$space}rem;
+//     }
+
+//     //Vertical padding
+//     .py-#{$space} {
+//         padding: #{$space}rem 0;
+//     }
+//     //Horizontal padding
+//     .py-#{$space} {
+//         padding: #{$space}rem 0;
+//     }
+// }
+
+/** 
+    Uzzini kā pievienot % zīmi
+*/
+
+// $shrinkamounts: (100,50,75,25);
+//     @each $amount in $shrinkamounts {
+//         .height-#{$amount} {
+//             height: $amount%;
+//         }
+//     }
+
+
+// This is burger icon single bar
+@mixin burgerBar($top: 0.8rem, $width: 2rem){
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: $top;
+    height: 0.2rem;
+    width: $width;
+    background-color: #fff;
+    @include transition-ease;
+}
+
+//This is burger icon
+.icon-burger {
+    @include burgerBar;
+    
+    &::before {
+        @include burgerBar(-0.5rem);
+        content: '';
+    }
+
+    &::after {
+        @include burgerBar(0.5rem);
+        content: '';
+    }
+
+    // Animate bars to turn into X
+    &.open {
+        transform: rotate(720deg);
+        background: transparent;
+
+        &::before {
+            transform: rotate(45deg) translate(4px, 8px);
+        }
+
+        &::after {
+            width: 28px;
+            transform: rotate(325deg) translate(2px, -8px);
+        }
+    }
+}

@@ -1,0 +1,382 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #F4F5F5;
+  font-family: "Catamaran", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:link,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bg-orange {
+  background: radial-gradient(66.72% 853.42% at 95.94% 15.63%, rgba(255, 111, 8, 0.95) 0%, rgba(153, 51, 0, 0.95) 60.83%);
+  color: #fff;
+}
+
+.bg-orange2 {
+  background: radial-gradient(72.64% 100% at 33.91% 0%, #FF6F08 0%, #993300 100%);
+  color: #fff;
+}
+
+.bg-tirkizs {
+  background: #2E5E65;
+  color: #fff;
+}
+
+.bg-green {
+  background: #8ac05f;
+  color: #152b04;
+}
+
+.bg-green a:link,
+.bg-green a:visited {
+  color: #152b04;
+}
+
+.bg-dark {
+  background: #231f1c;
+  color: #fff;
+}
+
+.color-orange {
+  color: #FF6F08;
+}
+
+.color-orange2 {
+  color: #993300;
+}
+
+.border {
+  border: 1px solid;
+}
+
+.border-top {
+  border-top: 2rem solid;
+}
+
+.border-btm {
+  border-bottom: 0.5rem solid;
+}
+
+.border-green {
+  border-color: #8ac05f;
+}
+
+.border-orange {
+  border-color: #FF6F08;
+}
+
+.fixed {
+  top: 0;
+  position: fixed;
+  width: 100vw;
+}
+
+.fixedd {
+  position: fixed;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.px-05 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.p-05 {
+  padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.height-75 {
+  height: 75%;
+}
+
+.height-50 {
+  height: 50%;
+}
+
+.height-25 {
+  height: 25%;
+}
+
+.height-shrinked {
+  height: 2.5rem;
+}
+
+.btn {
+  display: block;
+  height: 100%;
+  padding: 0.8rem 0.8rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.box-shadow {
+  position: relative;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.45);
+}
+
+.vertical {
+  display: -webkit-box;
+  display: flex;
+}
+
+/**
+Izdomā kā ievietot 0.5 rem
+*/
+
+/** 
+    Uzzini kā pievienot % zīmi
+*/
+
+.icon-burger {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0.8rem;
+  height: 0.2rem;
+  width: 2rem;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-burger::before {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: -0.5rem;
+  height: 0.2rem;
+  width: 2rem;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+
+.icon-burger::after {
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  top: 0.5rem;
+  height: 0.2rem;
+  width: 2rem;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  content: "";
+}
+
+.icon-burger.open {
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
+  background: transparent;
+}
+
+.icon-burger.open::before {
+  -webkit-transform: rotate(45deg) translate(4px, 8px);
+          transform: rotate(45deg) translate(4px, 8px);
+}
+
+.icon-burger.open::after {
+  width: 28px;
+  -webkit-transform: rotate(325deg) translate(2px, -8px);
+          transform: rotate(325deg) translate(2px, -8px);
+}
+
+.landing {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.landing-bg {
+  position: relative;
+  background: url(/images/kursu.jpg?f59e1310f7bc4460e624ec60c24cd8d0) no-repeat center center/cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.landing-inner {
+  z-index: 1;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.landing-title {
+  font-size: 3rem;
+}
+
+.landing-nav ul {
+  margin: auto;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.landing-nav li {
+  display: block;
+  height: 100%;
+  border: 0.1rem solid rgba(204, 204, 204, 0.2);
+  margin: 0.1rem;
+}
+
+.landing-nav li:hover,
+.landing-nav li:focus {
+  border-color: #ccc;
+}
+
+.landing-nav a:link,
+.landing-nav a:visited {
+  background: transparent;
+  color: #ccc;
+}
+
+.landing-nav a:link:hover,
+.landing-nav a:link:focus,
+.landing-nav a:visited:hover,
+.landing-nav a:visited:focus {
+  background-color: rgba(35, 31, 28, 0.7);
+  color: #ccc;
+}
+
+.landing-nav a:link:active,
+.landing-nav a:visited:active {
+  background-color: rgba(35, 31, 28, 0.7);
+  color: #ccc;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #000;
+}
+
+main h2,
+main strong {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.section-title {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.section-title h1 {
+  width: 100%;
+}
+
+.special-title {
+  width: 100%;
+  top: 0;
+}
+
+.section-content figure {
+  align-self: center;
+}
+
+.section-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.section-content table th,
+.section-content table td {
+  border-bottom: 1px solid #000;
+}
+
+.section-content table tr:last-child td {
+  border-bottom: none;
+}
+
+.section-content table p {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .section-content {
+    display: -webkit-box;
+    display: flex;
+  }
+
+  .section-content table {
+    margin-left: 1rem;
+  }
+}
+

@@ -1,0 +1,45 @@
+// Resets
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F4F5F5;
+
+    //Viksieni fonts
+    font-family: 'Catamaran', sans-serif;
+
+    //Kursu fonts
+    // font-family: 'Sorts Mill Goudy', serif;
+}
+img {
+    max-width: 100%;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a:link,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+

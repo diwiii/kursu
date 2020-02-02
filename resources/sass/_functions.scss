@@ -1,0 +1,21 @@
+//Transitions
+@mixin transition-ease {
+    transition: all 0.3s ease-in-out;
+}
+
+
+@mixin alink($bgcolor, $hover-bg, $textcolor) {
+    a:link, a:visited {
+        background: #{$bgcolor};
+        color: $textcolor;
+
+        &:hover, &:focus {
+            background-color: $hover-bg;
+            color: $textcolor;
+        }
+        &:active {
+            background-color: $hover-bg;
+            color: $textcolor;
+        }
+    }
+}

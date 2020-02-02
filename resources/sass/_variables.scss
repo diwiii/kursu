@@ -1,0 +1,40 @@
+// Variables
+$orange: #FF6F08;
+$orange2: #993300;
+$tirkizs: #2E5E65;
+$green: #8ac05f;
+$green2: #152b04;
+$dark: #231f1c;
+$light: #ccc    ;
+
+// Color
+$primary-color: $orange2;
+
+
+// Maps
+$gradient-colors: (
+    'orange' : 'radial-gradient(66.72% 853.42% at 95.94% 15.63%, rgba(255, 111, 8, 0.95) 0%, rgba(153, 51, 0, 0.95) 60.83%)',
+    'orange2' : 'radial-gradient(72.64% 100% at 33.91% 0%, #FF6F08 0%, #993300 100%)'
+);
+
+//Media queries
+@mixin media-sm {
+    @media screen and (min-width: 360px) {
+        @content; //when we call this mixin whatever content will be passed in this meadia querry
+    }
+}
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content; //when we call this mixin whatever content will be passed in this meadia querry
+    }
+}
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content; //when we call this mixin whatever content will be passed in this meadia querry
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content; //when we call this mixin whatever content will be passed in this meadia querry
+    }
+}
