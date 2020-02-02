@@ -16,6 +16,7 @@ class CreateDishCategoriesTable extends Migration
         Schema::create('dish_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->integer('arrangement')->nullable(); //Is this migration working?
             $table->timestamps();
 
         });

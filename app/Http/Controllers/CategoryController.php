@@ -104,7 +104,8 @@ class CategoryController extends Controller
     protected function validateCategory() 
     {
         return request()->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'arrangement' => 'numeric | nullable'
         ]);
     }
 }

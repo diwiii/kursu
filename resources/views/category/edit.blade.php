@@ -14,8 +14,8 @@
     @csrf
     {{-- todo: iespēja izvēlēties ēdienu kategorijas --}}
     <ul>
-        @foreach ($dishCategories as $category)
-        <li>{{$category->name}}, id: {{$category->id}}</li>
+        @foreach ($dishCategories as $listCategoryItem)
+        <li>{{$listCategoryItem->name}}, id: {{$listCategoryItem->id}}</li>
         @endforeach
     </ul>
     {{-- this is form input field with label --}}
@@ -37,6 +37,25 @@
         {{-- if error message --}}
         @error('name')
         <p>{{$errors->first('name')}}</p>
+        @enderror
+    </div>
+    {{-- this is form input field with label --}}
+    <div>
+        <label for="arrangement">Kategorijas secība</label>
+        <input 
+        id="arrangement"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('arrangement')
+        class="danger"
+        @enderror
+        type="text"
+        name="arrangement"
+        {{-- provide old input incase of error --}}
+        value="{{old('arrangement') ?? $category->arrangement}}">
+
+        {{-- if error message --}}
+        @error('arrangement')
+        <p>{{$errors->first('arrangement')}}</p>
         @enderror
     </div>
     <button type="submit">Saglabāt izmaiņas</button>

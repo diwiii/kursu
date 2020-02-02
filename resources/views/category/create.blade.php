@@ -36,6 +36,25 @@
         <p>{{$errors->first('name')}}</p>
         @enderror
     </div>
+    {{-- this is form input field with label --}}
+    <div>
+        <label for="arrangement">Kategorijas secība</label>
+        <input 
+        id="arrangement"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('arrangement')
+        class="danger"
+        @enderror
+        type="text"
+        name="arrangement"
+        {{-- provide old input incase of error --}}
+        value="{{old('arrangement')}}">
+
+        {{-- if error message --}}
+        @error('arrangement')
+        <p>{{$errors->first('arrangement')}}</p>
+        @enderror
+    </div>
 
     <button type="submit">Pievienot</button>
 </form>

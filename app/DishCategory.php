@@ -13,7 +13,7 @@ class DishCategory extends Model
      * 
      * Lai var izmantot DishCategory::create() metodi, izveido jaunu modeli
      */
-    protected $fillable = [ 'name' ];
+    protected $fillable = [ 'name', 'arrangement' ];
 
     /**
      * Get the dishes

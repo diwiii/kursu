@@ -10,7 +10,8 @@ class DishesController extends Controller
 {
     // List the dishes
     public function index() {
-        $dishCategories = DishCategory::all();
+        //Returns arranged list of categories
+        $dishCategories = DishCategory::orderBy('arrangement', 'asc')->get();
         return view('dishes.index', compact('dishCategories'));
     }
 
