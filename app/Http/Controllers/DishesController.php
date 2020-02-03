@@ -63,7 +63,7 @@ class DishesController extends Controller
     protected function validateDish() 
     {
         return request()->validate([
-            'category_id' => 'required',
+            'category_id' => 'required | numeric',
             'name' => 'required',
             'price' => 'numeric | nullable'
         ]);
