@@ -154,15 +154,30 @@ a:visited {
   height: 2.5rem;
 }
 
+.vw90 {
+  width: 90vw;
+}
+
 .btn {
+  font-size: 1.5rem;
   display: block;
-  height: 100%;
-  padding: 0.8rem 0.8rem;
+  padding: 0.2rem;
   border: none;
   cursor: pointer;
   outline: none;
+  border: 0.1rem solid rgba(204, 204, 204, 0.2);
+  margin: 0.1rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  border-color: #ccc;
+}
+
+.btn i {
+  vertical-align: middle;
 }
 
 .box-shadow {
@@ -273,28 +288,6 @@ Izdomā kā ievietot 0.5 rem
 
 .landing-title {
   font-size: 3rem;
-}
-
-.landing-nav ul {
-  margin: auto;
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-          align-items: center;
-  height: 100%;
-}
-
-.landing-nav li {
-  display: block;
-  height: 100%;
-  border: 0.1rem solid rgba(204, 204, 204, 0.2);
-  margin: 0.1rem;
-}
-
-.landing-nav li:hover,
-.landing-nav li:focus {
-  border-color: #ccc;
 }
 
 .landing-nav a:link,

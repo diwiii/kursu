@@ -120,17 +120,33 @@
     }
 }
 
+.vw90 {
+    width: 90vw;
+}
+
+
 // Buttons 
 .btn {
+    font-size: 1.5rem;
     display: block;
-    height: 100%;
+    // nevajag? height: 100%;
     //color: #333;
-    padding: 0.8rem 0.8rem;
+    padding: 0.2rem;
     border: none;
     cursor: pointer;
   //  margin-right: 0.5rem; //if we have buttons in a row give them a space of 0.5rem
     outline: none;
+    border: 0.1rem solid rgba($color: $light, $alpha: 0.2);
+    margin: 0.1rem;
+
+    &:hover, &:focus {
+        border-color: $light;
+    }
     @include transition-ease;
+
+    i {
+        vertical-align: middle;
+    }
 }
 
 // Shadow

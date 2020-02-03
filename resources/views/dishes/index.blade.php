@@ -10,18 +10,20 @@
         <div class="overlay"></div>
         <div class="landing-inner">
             <h1 class="landing-title">Kuršu krogs</h1>
-            <p>Iespējams mums te nemaz nebūš aprāķšČts</p>
-            <nav class="landing-nav">
+            {{-- <p>Apraksts</p> --}}
+            <nav class="landing-nav vw90">
                 <ul>
-                    <li class="">
+                    <li>
                         <a href="#edienkarte" class="btn">Ēdienkarte</a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#!" class="btn">Dzērienkarte</a>
                     </li>
                     <li>
-                        <a href="#!" class="btn"><i class="material-icons">call</i></a>
-                    </li>
+                        <a href="#!" class="btn">
+                            <i class="material-icons">call</i>
+                        </a>
+                    </li> --}}
                 </ul>
             </nav>
         </div>
@@ -38,23 +40,10 @@
             Uzkodas, Salāti, Zupas, Gaļas, Zivis, Piedevas, Deserti
             -->
             <!-- Section Title -->
-            <div class="section-title">
-                <h1 class="p-05">{{ $category->name }}</h1>
+            <div class="section-title p-05">
+                <h1 class="">{{ $category->name }}</h1>
                 <nav class="landing-nav">
-                    <ul>
-                        <li class="">
-                            <a href="#edienkarte" class="btn">Ēdienkarte</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="btn">Dzērienkarte</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="btn">Zvanīt</a>
-                        </li>
-                        <li>
-                            <a href="#home" class="btn"><i class="material-icons">arrow_upward</i></a>
-                        </li>
-                    </ul>
+                    <a href="#home" class="btn"><i class="material-icons">arrow_upward</i></a>
                 </nav>
             </div>
         </header>
@@ -75,7 +64,7 @@
                 <tr>
                     <td>
                         <h2>{{ $dish->name }}</h2>
-                        <p>Burkāni, kartupeļi, sīpoli, bekons,</p>
+                        {{-- <p>Burkāni, kartupeļi, sīpoli, bekons,</p> --}}
                     </td>
                     <td><strong>{{ $dish->price }}</strong></td>
                 </tr>

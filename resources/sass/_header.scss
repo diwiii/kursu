@@ -46,22 +46,13 @@
     // width: 100%;
 
     ul {
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        height: 100%;
+        // margin: auto;
+        // display: flex;
+        // flex-wrap: wrap;
     }
 
     li {
-        display: block; //nepieciešams lai iconas rādītu
-        height: 100%;
-        border: 0.1rem solid rgba($color: $light, $alpha: 0.2);
-        margin: 0.1rem;
 
-        &:hover, &:focus {
-            border-color: $light;
-        }
     }
 
     //link colors
