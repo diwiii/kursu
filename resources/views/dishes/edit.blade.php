@@ -7,7 +7,7 @@
 @section('content')
 {{-- form to create new dish instance --}}
 <h1>Rediģēt {{$dish->name}}</h1>
-<form method="POST" action="/dishes/{{$dish->id}}">
+<form method="POST" action="/dishes/{{$dish->id}}" enctype="multipart/form-data">
     {{-- method to use instead of POST --}}
     @method('PUT')
     {{-- cross site request forgery --}}
@@ -76,6 +76,25 @@
         {{-- if error message --}}
         @error('price')
         <p>{{$errors->first('price')}}</p>
+        @enderror
+    </div>
+    {{-- this is form input field with label --}}
+    <div>
+        <label for="image">Ēdiena bilde</label>
+        <input 
+        id="image"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('image')
+        class="danger"
+        @enderror
+        type="file"
+        name="image"
+        {{-- provide old input incase of error --}}
+        value="{{old('image')}}">
+
+        {{-- if error message --}}
+        @error('image')
+        <p>{{$errors->first('image')}}</p>
         @enderror
     </div>
 

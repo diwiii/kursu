@@ -62,11 +62,34 @@ class DishesController extends Controller
 
     protected function validateDish() 
     {
-        return request()->validate([
+        $data = request()->validate([
             'category_id' => 'required | numeric',
             'name' => 'required',
-            'price' => 'numeric | nullable'
+            'price' => 'numeric | nullable',
+            'image' => 'mimes:jpg,jpeg,png | image | nullable'
         ]);
+
+        if (array_key_exists('image', $data)) {
+            return $this->processDishImage($data);
+        }
+
+        return $data;
+    }
+    /**
+     * Returns array with altered 'image' value;
+     */
+    protected function processDishImage($dishData) 
+    {
+        $imagePath = $dishData['image']->store('uploads/dishes', 'public');
+        $image = \Image::make(public_path("/storage/{$imagePath}"))->fit(640,320);
+        $image->save();
+
+        $dishData = array_merge(
+            $dishData,
+            ['image' => $imagePath
+        ]);
+
+        return $dishData;
     }
 
 }

@@ -1,3 +1,5 @@
+php artisan storage:link
+symbolic link for storage/app/public
 # A restaurant menu
 
 ## todo:
