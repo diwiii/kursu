@@ -97,7 +97,7 @@
     </div>
     {{-- this is form input field with label --}}
     <div>
-        <label for="featured">Special</label>
+        <label for="featured">Featured</label>
         <input 
         id="featured"
         {{-- @error directive is fired and adds danger class whenever we get error --}}
