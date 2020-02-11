@@ -13,7 +13,7 @@ class Dish extends Model
      * 
      * Lai var izmantot Dish::create() metodi, izveido jaunu modeli
      */
-    protected $fillable = [ 'category_id', 'name', 'price', 'image' ];
+    protected $fillable = [ 'category_id', 'name', 'price', 'image', 'featured' ];
     
     // Get the category that has this dish
     // $dish->category

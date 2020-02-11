@@ -95,6 +95,24 @@
         <p>{{$errors->first('image')}}</p>
         @enderror
     </div>
+    {{-- this is form input field with label --}}
+    <div>
+        <label for="featured">Special</label>
+        <input 
+        id="featured"
+        {{-- @error directive is fired and adds danger class whenever we get error --}}
+        @error('featured')
+        class="danger"
+        @enderror
+        type="checkbox"
+        name="featured"
+        value="1">
+
+        {{-- if error message --}}
+        @error('featured')
+        <p>{{$errors->first('featured')}}</p>
+        @enderror
+    </div>
 
     <button type="submit">Pievienot</button>
 </form>

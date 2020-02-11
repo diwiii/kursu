@@ -2,7 +2,6 @@
 
 ## todo:
 * Add dish to category special: featured image slide show
-Update migrations for dishes table - add column featured
 * favicon!
 * ~~iespēja mainīt kategoriju secību~~
 * nomainit urlā id uz slug
@@ -12,5 +11,3 @@ Update migrations for dishes table - add column featured
 * ~~add controller for category~~
 * ~~add css~~
 * index jābūt atsevišķi no dishes index
-
-Manuprāt vajag dish tabulā ielikt kolonnu featured: true | false un viss;

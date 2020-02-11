@@ -62,12 +62,22 @@ class DishesController extends Controller
 
     protected function validateDish() 
     {
+
         $data = request()->validate([
             'category_id' => 'required | numeric',
             'name' => 'required',
             'price' => 'numeric | nullable',
-            'image' => 'mimes:jpg,jpeg,png | image | nullable'
+            'image' => 'mimes:jpg,jpeg,png | image | nullable',
+            'featured' => 'boolean | nullable'
         ]);
+
+        // Adds null if we dont get featured, if the checkbox is unchecked
+        if (!array_key_exists('featured', $data)){
+            $data = array_merge(
+                $data,
+                ['featured' => null
+            ]);
+        }
 
         if (array_key_exists('image', $data)) {
             return $this->processDishImage($data);
