@@ -30,10 +30,10 @@
     </div>
 </header>
 <!-- Main Content -->
-<main class="">
+<main id="edienkarte" class="">
 @foreach( $dishCategories as $category )
     <!-- varbūt mēs varam uz lielāka ekrāna rādīt 2 lapas paralēli -->
-    <section id="edienkarte" class=""> 
+    <section id="" class=""> 
         <!-- Header of section -->
         <header class="container section-header">
             <!-- Te vajag uztaisīt sarakstu ar kategorijām:
@@ -53,10 +53,14 @@
             <!-- Content media -->
             <figure class="box-shadow">
                 <!-- Section Image Title -->
+                @isset($category->featured->name)
                 <div class="special">
-                    <h2 class="special-title bg-green p-05">Mīdijas</h2>
-                    <img class="" src="img/midijas.jpg" alt="Mīdijas baltvīna—saldā krējuma mērcē">
+                    <h2 class="special-title bg-green p-05">{{$category->featured->name}}</h2>
+                    @isset($category->featured->image)
+                    <img class="" src="storage/{{$category->featured->image}}" alt="{{$category->featured->name}}">
+                    @endisset
                 </div>
+                @endisset
             </figure>
             <!-- Content text -->
             <table class="my-1">

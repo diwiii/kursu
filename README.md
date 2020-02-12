@@ -1,3 +1,5 @@
+png image is not uploading?
+image processing, do i need to resize?
 # A restaurant menu
 
 ## todo:

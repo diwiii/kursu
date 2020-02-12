@@ -30,7 +30,7 @@ class DishCategory extends Model
      * //$category->featured
      */
     public function featured() {
-        return $this->hasMany('App\Dish', 'featured'); // select * from dishes where featured = 
+        return $this->hasOne('App\Dish', 'featured');
     }
 
     /**
