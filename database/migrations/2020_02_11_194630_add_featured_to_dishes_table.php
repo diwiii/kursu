@@ -14,7 +14,7 @@ class AddFeaturedToDishesTable extends Migration
     public function up()
     {
         Schema::table('dishes', function (Blueprint $table) {
-            $table->boolean('featured')->nullable();
+            $table->unsignedBigInteger('featured')->nullable();
         });
     }
 

@@ -20,7 +20,7 @@ class CreateDishesTable extends Migration
             $table->decimal('price', 8, 2)->nullable();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
-            $table->boolean('featured')->nullable();
+            $table->unsignedBigInteger('featured')->nullable();
             $table->timestamps();
 
             //Foreign Key

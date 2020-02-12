@@ -23,7 +23,14 @@ class DishCategory extends Model
     public function dishes() {
         //vajag pamēģināt arī hasMany(Dish::class) 
         return $this->hasMany('App\Dish', 'category_id'); // select * from dishes where category_id = 
-
+    }
+    /**
+     * Get the featured dish
+     * 
+     * //$category->featured
+     */
+    public function featured() {
+        return $this->hasMany('App\Dish', 'featured'); // select * from dishes where featured = 
     }
 
     /**

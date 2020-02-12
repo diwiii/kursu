@@ -99,20 +99,17 @@
     </div>
     {{-- this is form input field with label --}}
     <div>
-        <label for="featured">Featured</label>
+        <label for="featured">Featured: </label>
         <input 
         id="featured"
         {{-- @error directive is fired and adds danger class whenever we get error --}}
         @error('featured')
         class="danger"
         @enderror
-        type="checkbox"
+        type="text"
         name="featured"
-        value="1"
-        @if($dish->featured)
-        checked
-        @endif
-        >
+        {{-- provide old input incase of error --}}
+        value="{{ old('featured') ?? $dish->featured }}">
 
         {{-- if error message --}}
         @error('featured')
