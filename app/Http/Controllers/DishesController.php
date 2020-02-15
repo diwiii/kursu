@@ -87,8 +87,8 @@ class DishesController extends Controller
         //Fetch the image
         $image = \Image::make(public_path("/storage/{$imagePath}"));
 
-        //Limit maximum image width to 1200px, also prevent from upsizing if the image width is less than 1200
-        $image->widen(1200, function ($constraint) {
+        //Limit maximum image width to 460px, also prevent from upsizing if the image width is less than 1200
+        $image->widen(460, function ($constraint) {
             $constraint->upsize();
         });
         $image->save();
