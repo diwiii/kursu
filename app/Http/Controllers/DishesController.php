@@ -83,13 +83,18 @@ class DishesController extends Controller
     protected function processDishImage($dishData) 
     {
         $imagePath = $dishData['image']->store('uploads/dishes', 'public');
-        $image = \Image::make(public_path("/storage/{$imagePath}"))->fit(640,320);
+
+        //Fetch the image
+        $image = \Image::make(public_path("/storage/{$imagePath}"));
+
+        //Limit maximum image width to 1200px, also prevent from upsizing if the image width is less than 1200
+        $image->widen(1200, function ($constraint) {
+            $constraint->upsize();
+        });
         $image->save();
 
-        $dishData = array_merge(
-            $dishData,
-            ['image' => $imagePath
-        ]);
+        //Merge the arrays
+        $dishData = array_merge($dishData, ['image' => $imagePath]);
 
         return $dishData;
     }

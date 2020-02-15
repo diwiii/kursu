@@ -347,6 +347,7 @@ main strong {
 }
 
 .section-content table {
+  display: block;
   -webkit-box-flex: 0;
           flex: 0 0 50%;
   border-collapse: collapse;
