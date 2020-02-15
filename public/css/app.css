@@ -18,6 +18,7 @@ body {
 
 img {
   max-width: 100%;
+  display: block;
 }
 
 button {
@@ -323,10 +324,9 @@ main strong {
 }
 
 .section-title {
+  line-height: 3rem;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-align: center;
           align-items: center;
 }
@@ -342,16 +342,25 @@ main strong {
 
 .section-content figure {
   align-self: center;
+  -webkit-box-flex: 0;
+          flex: 0 0 50%;
 }
 
 .section-content table {
-  width: 100%;
+  -webkit-box-flex: 0;
+          flex: 0 0 50%;
   border-collapse: collapse;
 }
 
 .section-content table th,
 .section-content table td {
+  width: 100%;
   border-bottom: 1px solid #000;
+}
+
+.section-content table th:nth-child(2),
+.section-content table td:nth-child(2) {
+  text-align: right;
 }
 
 .section-content table tr:last-child td {
@@ -370,6 +379,11 @@ main strong {
 
   .section-content table {
     margin-left: 1rem;
+  }
+
+  .section-content th,
+  .section-content td {
+    padding: 0.5rem;
   }
 }
 
