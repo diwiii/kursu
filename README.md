@@ -1,3 +1,10 @@
+If the image width is 460px, after 460px of screen width we start to get blank space on the featured image,
+it is broken until screen width reaches 768+ px
+
+very first fix is : img resize at validation minimum is 768px
+first fix is add margin: auto to img
+or we should upload larger width images
+maybe min 768
 
 add 100% width to td
 png image is not uploading?

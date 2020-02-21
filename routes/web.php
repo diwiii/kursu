@@ -49,3 +49,14 @@ Route::get('/cat/{category}', 'CategoryController@show')->name('category.show');
 Route::put('/cat/{category}', 'CategoryController@update')->name('category.update')->middleware('auth');
 
 
+/**
+ * Authentication routes
+ * Disabled routes: register, reset, confirm
+ */
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'confirm' => false
+    ]);
+
+Route::get('/home', 'HomeController@index')->name('home');
