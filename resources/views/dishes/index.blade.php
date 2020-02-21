@@ -63,7 +63,7 @@
                 @endisset
             </figure>
             <!-- Content text -->
-            <table class="my-1">
+            <table>
                 @foreach( $category->dishes as $dish )
                 <tr>
                     <td>

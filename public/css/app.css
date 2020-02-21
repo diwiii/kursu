@@ -379,7 +379,7 @@ main strong {
   }
 
   .section-content table {
-    margin-left: 1rem;
+    padding-left: 1rem;
   }
 
   .section-content th,
