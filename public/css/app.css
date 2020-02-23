@@ -53,7 +53,7 @@ a:visited {
 
 .bg-tirkizs {
   background: #2E5E65;
-  color: #fff;
+  color: #F4F5F5;
 }
 
 .bg-green {
@@ -77,6 +77,11 @@ a:visited {
 
 .color-orange2 {
   color: #993300;
+}
+
+.color-green {
+  color: #8ac05f;
+  border-color: #8ac05f;
 }
 
 .border {
@@ -136,7 +141,7 @@ a:visited {
 }
 
 .p-1 {
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .height-75 {
@@ -166,7 +171,7 @@ a:visited {
   border: none;
   cursor: pointer;
   outline: none;
-  border: 0.1rem solid rgba(204, 204, 204, 0.2);
+  border: 0.1rem solid rgba(244, 245, 245, 0.2);
   margin: 0.1rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -174,7 +179,7 @@ a:visited {
 
 .btn:hover,
 .btn:focus {
-  border-color: #ccc;
+  border-color: #F4F5F5;
 }
 
 .btn i {
@@ -294,7 +299,7 @@ Izdomā kā ievietot 0.5 rem
 .landing-nav a:link,
 .landing-nav a:visited {
   background: transparent;
-  color: #ccc;
+  color: #F4F5F5;
 }
 
 .landing-nav a:link:hover,
@@ -302,13 +307,13 @@ Izdomā kā ievietot 0.5 rem
 .landing-nav a:visited:hover,
 .landing-nav a:visited:focus {
   background-color: rgba(35, 31, 28, 0.7);
-  color: #ccc;
+  color: #F4F5F5;
 }
 
 .landing-nav a:link:active,
 .landing-nav a:visited:active {
   background-color: rgba(35, 31, 28, 0.7);
-  color: #ccc;
+  color: #F4F5F5;
 }
 
 main h1 {
@@ -338,12 +343,19 @@ main strong {
 .special-title {
   width: 100%;
   top: 0;
+  border-radius: 0 0 5px 5px;
+}
+
+.special img {
+  border-radius: 5px 5px 0 0;
+  border-bottom: 5px solid;
 }
 
 .section-content figure {
   align-self: center;
   -webkit-box-flex: 0;
           flex: 0 0 50%;
+  border-radius: 5px;
 }
 
 .section-content table {
@@ -356,7 +368,7 @@ main strong {
 .section-content table th,
 .section-content table td {
   width: 100%;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .section-content table th:nth-child(2),
@@ -372,6 +384,10 @@ main strong {
   font-size: 1rem;
 }
 
+/**
+* Media queries
+**/
+
 @media screen and (min-width: 768px) {
   .section-content {
     display: -webkit-box;
@@ -385,6 +401,12 @@ main strong {
   .section-content th,
   .section-content td {
     padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-content table {
+    padding-top: 1rem;
   }
 }
 

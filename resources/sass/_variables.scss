@@ -5,7 +5,7 @@ $tirkizs: #2E5E65;
 $green: #8ac05f;
 $green2: #152b04;
 $dark: #231f1c;
-$light: #ccc    ;
+$light: #F4F5F5;
 
 // Color
 $primary-color: $orange2;
@@ -19,7 +19,7 @@ $gradient-colors: (
 
 //Media queries
 @mixin media-sm {
-    @media screen and (min-width: 360px) {
+    @media screen and (max-width: 768px) {
         @content; //when we call this mixin whatever content will be passed in this meadia querry
     }
 }

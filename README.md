@@ -1,3 +1,10 @@
+Please add padding topbottom -> py-1rem to style
+
+Swap Special dish image and title, 
+add border radius to special dish,
+add border to bottom of the img,
+use class to chose border color.
+
 If the image width is 460px, after 460px of screen width we start to get blank space on the featured image,
 it is broken until screen width reaches 768+ px
 

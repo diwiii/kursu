@@ -12,7 +12,7 @@
     }
     &-tirkizs {
         background: $tirkizs;
-        color: #fff;
+        color: $light;
     }
     &-green {
         background: $green;
@@ -34,6 +34,10 @@
     }
     &-orange2 {
         color: $orange2;
+    }
+    &-green {
+        color: $green;
+        border-color: $green;
     }
 }
 
@@ -101,7 +105,7 @@
     padding: 0.5rem;
 }
 .p-1 {
-    padding: 0.5rem;
+    padding: 1rem;
 }
 
 // Height
