@@ -120,6 +120,9 @@
 
     <button type="submit">Saglabāt izmaiņas</button>
 </form>
+@isset($dish->image)
+<img src="/storage/{{$dish->image}}" alt="">
+@endisset
 @endsection
 
 {{-- side comments for category forms --}}

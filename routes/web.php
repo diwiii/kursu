@@ -31,6 +31,8 @@ Route::get('dishes', 'DishesController@index');
 Route::post('dishes', 'DishesController@store')->middleware('auth');
 
 Route::get('dishes/create', 'DishesController@create')->middleware('auth');
+//List the dishes
+Route::get('dishes/edit', 'DishesController@edit')->middleware('auth');
 
 Route::get('dishes/{dish}', 'DishesController@show')->name('dishes.show');
 // Rediģēšanas forma ēdiena ierakstam

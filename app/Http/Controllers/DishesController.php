@@ -41,6 +41,12 @@ class DishesController extends Controller
     // Show a view to edit existing resource
         // Edit method Route Model Binding
     public function edit(Dish $dish){
+        // If we get dish without id return edit-index
+        if(!$dish->id) {
+            $dishes = Dish::all();
+            return view('dishes.edit-index', compact('dishes'));
+        }
+
         $dishCategories = DishCategory::all();
         return view('dishes.edit', compact('dishCategories', 'dish'));
     }

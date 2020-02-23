@@ -56,7 +56,7 @@
                 @isset($category->featured->name)
                 <div class="special">
                     @isset($category->featured->image)
-                    <img class="color-green" src="storage/{{$category->featured->image}}" alt="{{$category->featured->name}}">
+                    <img class="color-green" src="/storage/{{$category->featured->image}}" alt="{{$category->featured->name}}">
                     @endisset
                     <h2 class="special-title bg-dark p-1">{{$category->featured->name}}</h2>
                 </div>
